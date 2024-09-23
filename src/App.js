@@ -1,4 +1,4 @@
-// SOurces
+// Sources
 // [1]: https://dev.to/collegewap/how-to-render-array-of-components-in-react-fma
 
 import { useState } from "react";
@@ -6,29 +6,11 @@ import { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
-
 import {
   MdOutlinePhone,
   MdOutlineFavorite,
   MdOutlineContactPhone,
 } from "react-icons/md"
-
-const menu = [
-  {
-    name: "Recents",
-    icon: MdOutlinePhone,
-  },
-  {
-    name: "Favorites",
-    icon: MdOutlineFavorite,
-  },
-  {
-    name: "Contacts",
-    icon: MdOutlineContactPhone,
-  },
-]
-
-const formField = []
 
 
 function OldApp() {
@@ -56,24 +38,14 @@ const Item = ({ value }) => {
   return <li>{value}</li>
 }
 
-const SimpleListApp = () => {
+const BulletApp = () => {
   const items = Array.from({ length: 10 }).map((_, index) => (
     <Item key={index} value={index + 1} />
     ))
     return <ul>{items}</ul>
 }  
 
-
-function ListMeApp()
-{
-  return menu.map(item => {
-    return (
-      <li key={item.name}>
-        <item.icon /> {item.name}
-      </li>
-    )
-  })
-}
+ 
 
 
 const theMenu = [
@@ -96,22 +68,6 @@ function AddComponentsToList()
   // [1]
   const [count, setCount] = useState(0);
   const [formArea, setFormArea] = useState(theMenu);
-
-  let myMenu = [
-    {
-      name: "Recents",
-      icon: MdOutlinePhone,
-    },
-    {
-      name: "Favorites",
-      icon: MdOutlineFavorite,
-    },
-    {
-      name: "Contacts",
-      icon: MdOutlineContactPhone,
-    },
-  ];
-
 
   let listIndex = Math.floor(Math.random()*10) % 3;
 
@@ -149,10 +105,9 @@ function AddComponentsToList()
 
 function App()
 {
-  return <AddComponentsToList/>
-  // return <ListMeApp/>
-  // return <SimpleListApp/>
   // return <OldApp/>
+  // return <BulletApp/>
+  return <AddComponentsToList/>
 }
 
 
